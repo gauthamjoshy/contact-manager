@@ -10,6 +10,18 @@ function PhoneBook() {
                 </div>
                 
             </div>
+            <div className="row">
+                <div className="col-3"></div>
+                <div className="col">
+                    <label htmlFor="">Full Name : </label>
+                    <input type="text" />
+                    <label htmlFor="">Number : </label>
+                    <input type="number" />
+                    <label htmlFor="">Email : </label>
+                    <input type="email" />
+                </div>
+                <div className="col-3"></div>
+            </div>
             
             <div className="row">
                
