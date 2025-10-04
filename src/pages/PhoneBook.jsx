@@ -10,20 +10,7 @@ function PhoneBook() {
                 </div>
                 
             </div>
-            {/* <div className="container border border-black rounded d-flex justify-content-center align-items-center">
-                <div className="container d-flex justify-content-center align-items-center">
-                    <label htmlFor="">Sort by : </label>
-                    <select name="" id="">
-                        <option value=""> </option>
-                        <option value="">Name</option>
-                        <option value="">Email</option>
-                        <option value="">Number</option>
-                    </select>
-                </div>
-                <div className="container">
-                    <button className="btn btn-success">Sort</button>
-                </div>
-            </div> */}
+            
             <div className="row">
                
                     <div className="col-4"></div>
