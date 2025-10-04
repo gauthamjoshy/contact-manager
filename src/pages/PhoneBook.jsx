@@ -35,12 +35,12 @@ function PhoneBook() {
             <div className="row mt-5">
                 <div className="col-1"></div>
                 <div className="col d-flex justify-content-center align-items-center">
-                    <table className="table border shadow rounded-4 w-75 ">
+                    <table className="table border shadow rounded-4 w-75">
                         <thead className="table-dark border">
                             <tr className="border">
-                                <th className="text-warning">Name</th>
-                                <th className="text-warning">phone</th>
-                                <th className="text-warning">Email</th>
+                                <th className="text-warning p-3">Name</th>
+                                <th className="text-warning p-3">phone</th>
+                                <th className="text-warning p-3">Email</th>
                             </tr>
                         </thead>
                         <tbody>
