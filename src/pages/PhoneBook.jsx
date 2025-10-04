@@ -45,19 +45,19 @@ function PhoneBook() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Lisa Watson</td>
-                                <td>5897845629</td>
+                                <td>Lisa Watson</td>                              
                                 <td>lisa@gmail.com</td>
+                                <td>5897845629</td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
-                                <td>7587456291</td>
                                 <td>developerjohn@gmail.com</td>
+                                <td>7587456291</td>
                             </tr>
                             <tr>
-                                <td>John Doe</td>
-                                <td>7587456291</td>
+                                <td>John Doe</td>                                
                                 <td>developerjohn@gmail.com</td>
+                                <td>7587456291</td>
                             </tr>
 
                         </tbody>
