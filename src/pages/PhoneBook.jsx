@@ -20,8 +20,8 @@ function PhoneBook() {
                             <select name="" id="">
                                 <option value=""> </option>
                                 <option className="fw-medium" value="">Name</option>
-                                <option className="fw-medium"  value="">Email</option>
                                 <option className="fw-medium"  value="">Number</option>
+                                <option className="fw-medium"  value="">Email</option>
                             </select>
                             <div>
                                 <button style={{width:"auto", height:"30px"}} className="btn btn-success d-flex justify-content-center align-items-center">Sort</button>
@@ -39,27 +39,16 @@ function PhoneBook() {
                         <thead className="table-dark border">
                             <tr className="border">
                                 <th className="text-warning p-3">Name</th>
-                                <th className="text-warning p-3">Email</th>
                                 <th className="text-warning p-3">Number</th>
+                                <th className="text-warning p-3">Email</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Lisa Watson</td>                              
+                                <td>Lisa Watson</td>         
+                                <td>5897845629</td>                     
                                 <td>lisa@gmail.com</td>
-                                <td>5897845629</td>
                             </tr>
-                            <tr>
-                                <td>John Doe</td>
-                                <td>developerjohn@gmail.com</td>
-                                <td>7587456291</td>
-                            </tr>
-                            <tr>
-                                <td>John Doe</td>                                
-                                <td>developerjohn@gmail.com</td>
-                                <td>7587456291</td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
