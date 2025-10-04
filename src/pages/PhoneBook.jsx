@@ -38,9 +38,9 @@ function PhoneBook() {
                     <table className="table border shadow rounded-4 w-75 ">
                         <thead className="table-dark border">
                             <tr className="border">
-                                <th className="">Name</th>
-                                <th>phone</th>
-                                <th>Email</th>
+                                <th className="text-warning">Name</th>
+                                <th className="text-warning">phone</th>
+                                <th className="text-warning">Email</th>
                             </tr>
                         </thead>
                         <tbody>
