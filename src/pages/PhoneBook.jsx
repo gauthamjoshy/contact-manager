@@ -39,8 +39,8 @@ function PhoneBook() {
                         <thead className="table-dark border">
                             <tr className="border">
                                 <th className="text-warning p-3">Name</th>
-                                <th className="text-warning p-3">phone</th>
                                 <th className="text-warning p-3">Email</th>
+                                <th className="text-warning p-3">Number</th>
                             </tr>
                         </thead>
                         <tbody>
