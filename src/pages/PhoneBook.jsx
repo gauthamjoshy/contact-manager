@@ -3,25 +3,36 @@ import React from "react";
 function PhoneBook() {
     return (
         <>
-            <div className="container">
-                <h1 className="text-center text-primary mt-5">Contact Manager</h1>
-                <div className="d-flex justify-content-center align-items-center">
-                    <button style={{ width: "180px", height: "50px" }} className="btn btn-primary mt-3 fw-bold">Add Contact</button>
-                </div>
-                
-            </div>
-            <div className="row">
-                <div className="col-3"></div>
-                <div className="col">
-                    <label htmlFor="">Full Name : </label>
-                    <input type="text" />
-                    <label htmlFor="">Number : </label>
-                    <input type="number" />
-                    <label htmlFor="">Email : </label>
-                    <input type="email" />
-                </div>
-                <div className="col-3"></div>
-            </div>
+            <div className="container mt-5">
+  <h1 className="text-center text-primary mb-4">Contact Manager</h1>
+
+  <div className="row justify-content-center">
+    <div className="col-md-6">
+      <div className="card shadow p-4">
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label fw-bold">Full Name:</label>
+          <input type="text" id="name" className="form-control" placeholder="Enter full name" />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="number" className="form-label fw-bold">Number:</label>
+          <input type="number" id="number" className="form-control" placeholder="Enter phone number" />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label fw-bold">Email:</label>
+          <input type="email" id="email" className="form-control" placeholder="Enter email address" />
+        </div>
+
+        <div className="text-center">
+          <button className="btn btn-primary fw-bold px-4">Add Contact</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
             
             <div className="row">
                
