@@ -19,9 +19,9 @@ function PhoneBook() {
                             <label className="fs-5 fw-bold" htmlFor="">Sort by : </label>
                             <select name="" id="">
                                 <option value=""> </option>
-                                <option value="">Name</option>
-                                <option value="">Email</option>
-                                <option value="">Number</option>
+                                <option className="fw-medium" value="">Name</option>
+                                <option className="fw-medium"  value="">Email</option>
+                                <option className="fw-medium"  value="">Number</option>
                             </select>
                             <div>
                                 <button style={{width:"auto", height:"30px"}} className="btn btn-success d-flex justify-content-center align-items-center">Sort</button>
