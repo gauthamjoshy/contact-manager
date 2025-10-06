@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 function PhoneBook() {
     // add contact
@@ -77,7 +79,7 @@ function PhoneBook() {
                         <button onClick={handleContact} className="btn btn-primary fw-bold px-4">Add Contact</button>
 
                         {alertMessage &&(
-                            <p className="text-center fw-bold text-warning mt-3">{alertMessage}</p>
+                            <h5 className="text-center fw-medium text-warning mt-3">{alertMessage}</h5>
                         )}
                       </div>
                     </div>
@@ -120,15 +122,19 @@ function PhoneBook() {
                                 <th className="text-warning p-3">Name</th>
                                 <th className="text-warning p-3">Number</th>
                                 <th className="text-warning p-3">Email</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>                            
                             {
                                 newContact.map((person, index)=>(
                                     <tr key={index}>
-                                        <td>{person.name}</td>         
-                                        <td>{person.number}</td>                     
-                                        <td>{person.email}</td>
+                                        <td className="">{person.name}</td>         
+                                        <td className="">{person.number}</td>                     
+                                        <td className="">{person.email}</td>
+                                        <td><button className="fs-4 text-warning border-0"><FaEdit /></button></td>
+                                        <td><button className="fs-4 text-danger border-0"><MdDelete /></button></td>
                                     </tr>
                                 ))
                             }
