@@ -14,17 +14,7 @@ function PhoneBook() {
 
     const [alertMessage, currentAlertMessage] = useState("")  // to show warning messages
 
-    const [editcontact, editExistingContact] = useState("")
-
-    // const checkDuplicates = ()=>{
-    //     newContact.some((person)=>{
-    //         if(person.name == contact.name && person.number == contact.numbermber && person.email == contact.email){
-    //             alert(`Contact already exist`)
-    //         }else{
-    //             addNewContact([...newContact, contact])
-    //         }
-    // })
-    // }
+   
     const checkDuplicates = (contact)=>{ // to check for duplicates
         return newContact.some((person)=> 
             person.name == contact.name && person.number == contact.number && person.email == contact.email
