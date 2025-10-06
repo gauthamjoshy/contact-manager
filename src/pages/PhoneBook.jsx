@@ -10,7 +10,7 @@ function PhoneBook() {
 
     const [newContact, addNewContact] = useState([]) //to store the newly adding contacts
 
-    const [duplicate, findDuplicate] = useState(false)
+    const [alertMessage, currentAlertMessage] = useState("") 
 
     // const checkDuplicates = ()=>{
     //     newContact.some((person)=>{
@@ -21,7 +21,7 @@ function PhoneBook() {
     //         }
     // })
     // }
-    const checkDuplicates = (contact)=>{
+    const checkDuplicates = (contact)=>{ // to check for duplicates
         return newContact.some((person)=> 
             person.name == contact.name && person.number == contact.number && person.email == contact.email
         )
@@ -33,7 +33,7 @@ function PhoneBook() {
                 // addNewContact([...newContact, contact])
                 // console.log(contact);
                 if(checkDuplicates(contact)){
-                    findDuplicate(true)
+                    currentAlertMessage("Contact Already Exist...!")
                 }else{
                    addNewContact([...newContact, contact]) 
                 }
@@ -43,14 +43,11 @@ function PhoneBook() {
             
 
         }else{
-            alert(`Please fill all the appropriate fields completely...!`)
+            currentAlertMessage("Please fill all the details completely...!")
         }
         
     }
 
-    const displayContact = ()=>{
-        
-    }
 
     
     return (
@@ -79,8 +76,8 @@ function PhoneBook() {
                       <div className="text-center">
                         <button onClick={handleContact} className="btn btn-primary fw-bold px-4">Add Contact</button>
 
-                        {duplicate &&(
-                            <p className="text-center text-warning">Contact already exist</p>
+                        {alertMessage &&(
+                            <p className="text-center fw-bold text-warning mt-3">{alertMessage}</p>
                         )}
                       </div>
                     </div>
