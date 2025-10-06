@@ -67,7 +67,8 @@ function PhoneBook() {
                
                     <div className="col-4"></div>
                     <div className="col mt-5 border border-black rounded rounded w-100">
-                        <div style={{height:"50px"}} className="main d-flex justify-content-center align-items-center gap-3">
+                        {newContact.length !== 0?
+                            <div style={{height:"50px"}} className="main d-flex justify-content-center align-items-center gap-3">
                             <label className="fs-5 fw-bold" htmlFor="">Sort by : </label>
                             <select name="" id="">
                                 <option value=""> </option>
@@ -79,6 +80,7 @@ function PhoneBook() {
                                 <button style={{width:"auto", height:"30px"}} className="btn btn-success d-flex justify-content-center align-items-center">Sort</button>
                             </div>
                         </div>
+                        :""}
                     </div>
                     <div className="col-4"></div>
                 
@@ -87,7 +89,8 @@ function PhoneBook() {
             <div className="row mt-5">
                 <div className="col-1"></div>
                 <div className="col d-flex justify-content-center align-items-center">
-                    <table className="table border shadow rounded-4 w-75">
+                    {newContact.length !== 0 ?
+                        <table className="table border shadow rounded-4 w-75">
                         <thead className="table-dark border">
                             <tr className="border">
                                 <th className="text-warning p-3">Name</th>
@@ -96,13 +99,18 @@ function PhoneBook() {
                             </tr>
                         </thead>
                         <tbody>                            
-                            <tr>
-                                <td>Lisa Watson</td>         
-                                <td>5897845629</td>                     
-                                <td>lisa@gmail.com</td>
-                            </tr>
+                            {
+                                newContact.map((person, index)=>(
+                                    <tr key={index}>
+                                        <td>{person.name}</td>         
+                                        <td>{person.number}</td>                     
+                                        <td>{person.email}</td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
+                    : <h1 className="text-center text-primary">No Contacts Added Yet</h1>}
                 </div>
                 <div className="col-1"></div>
             </div>
