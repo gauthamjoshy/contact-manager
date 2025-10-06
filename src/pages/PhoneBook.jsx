@@ -70,6 +70,14 @@ function PhoneBook() {
         addNewContact(tempContact)
     }
 
+    //delete contact
+    const deleteContact = (index)=>{
+        const deleteList = [...newContact]
+        deleteList.splice(index, 1)
+        addNewContact(deleteList)
+
+    }
+
     
     //clear
     // const clearContact = (index)=>{
@@ -164,7 +172,7 @@ function PhoneBook() {
                                         <td className="">{person.number}</td>                     
                                         <td className="">{person.email}</td>
                                         <td><button onClick={()=>editContact(index)} className="fs-4 text-warning border-0"><FaEdit /></button></td>
-                                        <td><button className="fs-4 text-danger border-0"><MdDelete /></button></td>
+                                        <td><button onClick={()=>deleteContact(index)} className="fs-4 text-danger border-0"><MdDelete /></button></td>
                                     </tr>
                                 ))
                             }
