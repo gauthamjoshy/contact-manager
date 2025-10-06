@@ -12,7 +12,9 @@ function PhoneBook() {
 
     const [newContact, addNewContact] = useState([]) //to store the newly adding contacts
 
-    const [alertMessage, currentAlertMessage] = useState("") 
+    const [alertMessage, currentAlertMessage] = useState("")  // to show warning messages
+
+    const [editcontact, editExistingContact] = useState("")
 
     // const checkDuplicates = ()=>{
     //     newContact.some((person)=>{
@@ -37,7 +39,12 @@ function PhoneBook() {
                 if(checkDuplicates(contact)){
                     currentAlertMessage("Contact Already Exist...!")
                 }else{
-                   addNewContact([...newContact, contact]) 
+                   addNewContact([...newContact, contact])
+                   addContact({
+                    name: "",
+                    number: "",
+                    email:""
+                   })
                 }
                 
                 
@@ -46,9 +53,32 @@ function PhoneBook() {
 
         }else{
             currentAlertMessage("Please fill all the details completely...!")
+            
         }
         
     }
+
+    //edit contact
+    const editContact = (index)=>{
+        addContact({
+        name : newContact[index].name,
+        number : newContact[index].number,
+        email : newContact[index].email
+        })
+        const tempContact = [...newContact]
+        tempContact.splice(index, 1)
+        addNewContact(tempContact)
+    }
+
+    
+    //clear
+    // const clearContact = (index)=>{
+    //     addContact({
+    //         name: newContact[index].name = "",
+    //         number : newContact[index].number = "",
+    //     email : newContact[index].email
+    //     })
+    // }
 
 
     
@@ -62,17 +92,17 @@ function PhoneBook() {
                     <div className="card shadow p-4">
                       <div className="mb-3">
                         <label htmlFor="name" className="form-label fw-bold">Full Name:</label>
-                        <input type="text" id="name" value={contact.name} onChange={(e)=>addContact({...contact, name:e.target.value})} className="form-control" placeholder="Enter full name" />
+                        <input type="text" id="name" value={contact.name} onChange={(e)=>{addContact({...contact, name:e.target.value}); currentAlertMessage("")}} className="form-control" placeholder="Enter full name" />
                       </div>
 
                       <div className="mb-3">
                         <label htmlFor="number" className="form-label fw-bold">Number:</label>
-                        <input type="number" id="number" value={contact.number} onChange={(e)=>addContact({...contact, number:e.target.value})} className="form-control" placeholder="Enter phone number" />
+                        <input type="number" id="number" value={contact.number} onChange={(e)=>{addContact({...contact, number:e.target.value}); currentAlertMessage("")}} className="form-control" placeholder="Enter phone number" />
                       </div>
 
                       <div className="mb-3">
                         <label htmlFor="email" className="form-label fw-bold">Email:</label>
-                        <input type="email" id="email" value={contact.email} onChange={(e)=>addContact({...contact, email:e.target.value})} className="form-control" placeholder="Enter email address" />
+                        <input type="email" id="email" value={contact.email} onChange={(e)=>{addContact({...contact, email:e.target.value}); currentAlertMessage("")}} className="form-control" placeholder="Enter email address" />
                       </div>
 
                       <div className="text-center">
@@ -133,7 +163,7 @@ function PhoneBook() {
                                         <td className="">{person.name}</td>         
                                         <td className="">{person.number}</td>                     
                                         <td className="">{person.email}</td>
-                                        <td><button className="fs-4 text-warning border-0"><FaEdit /></button></td>
+                                        <td><button onClick={()=>editContact(index)} className="fs-4 text-warning border-0"><FaEdit /></button></td>
                                         <td><button className="fs-4 text-danger border-0"><MdDelete /></button></td>
                                     </tr>
                                 ))
