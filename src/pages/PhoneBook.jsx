@@ -10,11 +10,32 @@ function PhoneBook() {
 
     const [newContact, addNewContact] = useState([]) //to store the newly adding contacts
 
+    // const checkDuplicates = ()=>{
+    //     newContact.some((person)=>{
+    //         if(person.name == contact.name && person.number == contact.numbermber && person.email == contact.email){
+    //             alert(`Contact already exist`)
+    //         }else{
+    //             addNewContact([...newContact, contact])
+    //         }
+    // })
+    // }
+    const checkDuplicates = (contact)=>{
+        return newContact.some((person)=> 
+            person.name == contact.name && person.number == contact.number && person.email == contact.email
+        )
+    }
+
     const handleContact = ()=>{
         if(contact.name && contact.number && contact.email){
             if(contact.name.trim() !=="" && contact.number.trim() !=="" && contact.email.trim() !==""){
-                addNewContact([...newContact, contact])
+                // addNewContact([...newContact, contact])
                 // console.log(contact);
+                if(checkDuplicates(contact)){
+                    alert(`Contact already exist`)
+                }else{
+                   addNewContact([...newContact, contact]) 
+                }
+                
                 
             }
             
@@ -25,7 +46,7 @@ function PhoneBook() {
         
     }
 
-    const dispalyContact = ()=>{
+    const displayContact = ()=>{
         
     }
 
