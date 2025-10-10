@@ -69,6 +69,8 @@ function PhoneBook() {
     }
 
     
+
+    
     //clear
     // const clearContact = (index)=>{
     //     addContact({
@@ -127,8 +129,6 @@ function PhoneBook() {
                             <select name="" id="">
                                 <option value=""> </option>
                                 <option className="fw-medium" value="">Name</option>
-                                <option className="fw-medium"  value="">Number</option>
-                                <option className="fw-medium"  value="">Email</option>
                             </select>
                             <div>
                                 <button style={{width:"auto", height:"30px"}} className="btn btn-success d-flex justify-content-center align-items-center">Sort</button>
